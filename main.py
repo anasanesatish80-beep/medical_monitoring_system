@@ -1,4 +1,3 @@
-
 import json  # For handling patient data in JSON format
 import logging  # For logging system events and alerts
 from google.adk.agents import Agent  # Base Agent class from Google ADK
@@ -10,6 +9,27 @@ import time  # For adding delays in the monitoring loop
 import threading  # For parallel agent execution
 import os  # For environment variable access
 from dotenv import load_dotenv  # For loading .env file
+import queue  # For agent-to-agent communication
+# EvaluationAgent for agent-to-agent communication and evaluation
+
+
+class EvaluationAgent:
+    def __init__(self):
+        self.received_alerts = []  # Store received alerts for evaluation
+
+    def receive_alerts(self, alerts):
+        """
+        Receive alerts from other agents and log them.
+        """
+        self.received_alerts.append(alerts)
+        print("[EvaluationAgent] Received alerts for evaluation.")
+
+    def evaluate(self):
+        """
+        Simple evaluation: count total alerts received.
+        """
+        total_patients = sum(len(alerts) for alerts in self.received_alerts)
+        print(f"[EvaluationAgent] Total patients with alerts (all runs): {total_patients}")
 
 
 
@@ -59,30 +79,38 @@ alert_history = []
 
 
 
-# Parallel agent execution: monitor each patient in a separate thread
-def monitor_patient_thread(patient, alert_summary):
+
+
+# Function to run monitoring using root_agent (LLM-powered)
+def monitor_with_root_agent(patients_json, alert_summary):
     """
-    Thread target function to check alerts for a single patient and update shared alert_summary.
+    Uses root_agent to process patient data and update alert_summary.
     """
-    alerts = check_alerts(patient)
-    if alerts:
-        alert_summary[patient["name"]] = alerts
+    result = root_agent.tools[0](patients_json)
+    for patient, alerts in result.items():
+        alert_summary[patient] = alerts
+
+
+# Instantiate EvaluationAgent and a communication queue
+evaluation_agent = EvaluationAgent()
+alert_queue = queue.Queue()
+
 
 # Main monitoring loop
 # Runs the monitoring process 3 times to simulate periodic checks
 for i in range(3):
     print(f"\n--- Monitoring Run #{i+1} ---")  # Indicate monitoring run number
     alert_summary = {}  # Shared dictionary for alerts
-    threads = []
-    # Start a thread for each patient
-    for patient in patients_data:
-        t = threading.Thread(target=monitor_patient_thread, args=(patient, alert_summary))
-        threads.append(t)
-        t.start()
-    # Wait for all threads to finish
-    for t in threads:
-        t.join()
+
+    # Use root_agent to process all patients in one step (LLM-powered)
+    monitor_with_root_agent(patients_json, alert_summary)
     alert_history.append(alert_summary)  # Store alerts for visualization
+
+    # Agent-to-agent communication: send alerts to EvaluationAgent via queue
+    alert_queue.put(alert_summary)
+    # EvaluationAgent receives alerts
+    if not alert_queue.empty():
+        evaluation_agent.receive_alerts(alert_queue.get())
 
     # Print alerts for each patient in this run
     if alert_summary:
@@ -100,6 +128,9 @@ for i in range(3):
         print("All patients are stable.")  # Print if no alerts
 
     time.sleep(1)  # Wait 1 second before next run
+
+# After monitoring runs, evaluate agent performance
+evaluation_agent.evaluate()
 
 
 
