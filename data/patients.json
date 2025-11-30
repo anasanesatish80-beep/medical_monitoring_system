@@ -1,0 +1,7 @@
+[
+  {"id": 1, "name": "Alice", "temperature": 98.6, "blood_pressure": "120/80", "blood_sugar": 90, "oxygen": 98},
+  {"id": 2, "name": "Bob", "temperature": 101.4, "blood_pressure": "140/90", "blood_sugar": 110, "oxygen": 92},
+  {"id": 3, "name": "Charlie", "temperature": 97.9, "blood_pressure": "130/85", "blood_sugar": 150, "oxygen": 95},
+  {"id": 4, "name": "David", "temperature": 99.1, "blood_pressure": "125/82", "blood_sugar": 85, "oxygen": 97},
+  {"id": 5, "name": "Emily ", "temperature": 102.2, "blood_pressure": "145/95", "blood_sugar": 200, "oxygen": 88}
+]

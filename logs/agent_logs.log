@@ -1,0 +1,38 @@
+INFO:root:RootAgent initialized with patients: ['Alice', 'Bob', 'Charlie', 'David', 'Eva']
+INFO:root:Run completed. Alerts: {'Bob': ['High fever'], 'Eva': ['High fever', 'High blood pressure', 'High blood sugar', 'Low oxygen level']}
+INFO:root:RootAgent initialized with patients: ['Alice', 'Bob', 'Charlie', 'David', 'Eva']
+INFO:root:Run completed. Alerts: {'Bob': ['High fever'], 'Eva': ['High fever', 'High blood pressure', 'High blood sugar', 'Low oxygen level']}
+INFO:root:Run completed. Alerts: {'Bob': ['High fever'], 'Eva': ['High fever', 'High blood pressure', 'High blood sugar', 'Low oxygen level']}
+INFO:root:Run completed. Alerts: {'Bob': ['High fever'], 'Eva': ['High fever', 'High blood pressure', 'High blood sugar', 'Low oxygen level']}
+INFO:root:Run completed. Alerts: {'Bob': ['High fever'], 'Eva': ['High fever', 'High blood pressure', 'High blood sugar', 'Low oxygen level']}
+INFO:root:Run completed. Alerts: {'Bob': ['High fever'], 'Eva': ['High fever', 'High blood pressure', 'High blood sugar', 'Low oxygen level']}
+INFO:root:Run completed. Alerts: {'Bob': ['High fever'], 'Eva': ['High fever', 'High blood pressure', 'High blood sugar', 'Low oxygen level']}
+INFO:root:Run completed. Alerts: {'Bob': ['High fever'], 'Eva': ['High fever', 'High blood pressure', 'High blood sugar', 'Low oxygen level']}
+INFO:root:Run completed. Alerts: {'Bob': ['High fever'], 'Eva': ['High fever', 'High blood pressure', 'High blood sugar', 'Low oxygen level']}
+INFO:root:Run completed. Alerts: {'Bob': ['High fever'], 'Eva': ['High fever', 'High blood pressure', 'High blood sugar', 'Low oxygen level']}
+INFO:root:Run completed. Alerts: {'Bob': ['High fever'], 'Eva': ['High fever', 'High blood pressure', 'High blood sugar', 'Low oxygen level']}
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
+INFO:root:Medical Monitoring System Started
