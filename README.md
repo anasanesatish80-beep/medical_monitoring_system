@@ -1,7 +1,7 @@
-# Clinical Alert AI: Smart Patient Monitoring System
+# Clinical CareAlert AI: Smart Patient Monitoring System
 
 ## Overview
-Clinical Alert AI is an intelligent multi-agent system designed to automate the monitoring of patient vitals in hospitals. It uses AI-powered agents to analyze patient data, generate alerts for dangerous conditions, and provide human-readable summaries and visualizations to improve patient safety and staff efficiency.
+Clinical CareAlert AI is an intelligent multi-agent system designed to automate the monitoring of patient vitals in hospitals. It uses AI-powered agents to analyze patient data, generate alerts for dangerous conditions, and provide human-readable summaries and visualizations to improve patient safety and staff efficiency.
 
 ## Features
 - **Multi-agent architecture:** Root agent powered by Gemini LLM, with monitoring, alert, explanation, and evaluation agents.
